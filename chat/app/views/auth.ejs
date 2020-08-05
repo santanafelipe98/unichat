@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UniChat</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Source+Sans+Pro:400,700&display=swap" rel="stylesheet"> 
+        <script src="js/jquery.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div class="container page-content">
+            <div id="auth-content" class="row">
+                <div class="col">
+                    <!-- Logo -->
+
+                    <div class="brand d-flex justify-content-center">
+                        <span class="brandname">Uni</span>
+                        <img src="images/chat.svg" alt="UniChat" class="logo">
+                    </div>
+                    
+                    <div class="slogan">A simple online chat where everyone speaks and understands the same language.</div>
+                </div>
+                <div class="col container-auth">
+                    <!-- Auth form -->
+                    <nav class="nav nav-tabs auth-header" role="tablist">
+                        <a href="#signin-form" class="nav-link active" id="signin-tab" data-toggle="tab" role="tab" aria-controls="signin-form" aria-selected="true">Sign In</a>
+                        <a href="#signup-form" class="nav-link" id="signup-tab" data-toggle="tab" role="tab" aria-controls="signup-form" aria-selected="false">Sign Up</a>
+                    </nav>
+        
+                    <div class="tab-content">
+
+                        <div class="container-auth-form tab-pane fade show active" id="signin-form" role="tabpanel" aria-labelledby="signin-tab"> <!-- Sign In Form -->
+        
+                            <form name="form-signin" action="/signin" method="post">
+                                <div class="form-group form-row mt-3">
+                                    <label for="nickname">Nickname</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">@</div>
+                                        </div>
+                                        <input type="text" id="nickname" name="nickname" class="form-control" placeholder="Type your nickname here">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" class="form-control">
+                                </div>
+            
+                                <div class="form-group form-row">
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input type="checkbox" name="remind_me" class="form-check-input" id="check-remind-me">
+                                            <label for="check-remind-me" class="form-check-label">Don't forget me</label>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col d-flex justify-content-end">
+                                        <a href="#">Forgot password?</a>
+                                    </div>
+                                </div>
+            
+                                <div class="form-group d-flex justify-content-end">
+                                    <button type="submit" name="signin" class="btn btn-success btn-sign">Sign In</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+    
+                        <div class="container-auth-form tab-pane fade" id="signup-form" role="tabpanel" aria-labelledby="signup-tab"> <!-- Sign Up Form -->
+                            <form name="form-signup" method="post" action="/signup">
+                                <div class="form-group form-row mt-3">
+    
+                                    <div class="col">
+        
+                                        <label for="firstname">First name</label>
+                                        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Type your first name here">
+        
+                                    </div>
+        
+                                    <div class="col">
+        
+                                        <label for="lastname">Last name</label>
+                                        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Type your last name here">
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="form-group">
+                                    
+                                    <label for="nickname">Nickname</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">@</div>
+                                        </div>
+                                        <input type="text" id="nickname" name="nickname" class="form-control" placeholder="Type your nickname here">
+                                    </div>
+        
+                                </div>
+        
+                                <div class="form-group form-row">
+                                    
+        
+                                    <div class="col">
+        
+                                        <label for="signup-password1">Password</label>
+                                        <input type="password" name="password" id="signup-password1" class="form-control">
+                                        
+                                    </div>
+        
+                                    <div class="col">
+        
+                                        <label for="signup-password2">Confirm password</label>
+                                        <input type="password" name="password_confirmation" id="signup-password2" class='form-control' placeholder="Confirm your password">
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div>
+                                    Date of birth
+                                </div>
+                                <div class="form-group form-row">
+                                    <div class="col-md-3">
+                                        <label for="date">Date</label>
+                                        <input type="number" name="date" id="date" class="form-control" min="1" max="31"value="1">
+                                    </div>
+        
+                                    <div class="col-md-3">
+                                        <label for="month">Month</label>
+        
+                                        <%
+                                            const MONTHS = [
+                                                'Jan',
+                                                'Feb',
+                                                'Mar',
+                                                'Apr',
+                                                'May',
+                                                'Jun',
+                                                'Jul',
+                                                'Aug',
+                                                'Sep',
+                                                'Oct',
+                                                'Nov',
+                                                'Dec'
+                                            ];
+                                        %>
+        
+                                        <select name="month" id="month" class="custom-select">
+                                            <% for (let i = 0; i < MONTHS.length; i++) { %>
+                                                <option value="<%= i %>"><%= MONTHS[i]  %></option>
+                                            <% } %>
+                                        </select>
+        
+                                    </div>
+        
+                                    <div class="col-md-3">
+                                        <label for="year">Year</label>
+                                        <%
+                                            let date = new Date();
+                                            const MIN_YEAR = date.getFullYear() - 100;
+                                        %>
+                                        <select name="year" id="year" class="custom-select">
+                                            <% for (let j = MIN_YEAR; j <= date.getFullYear(); j++) { %>
+                                                <% if (j == date.getFullYear()) { %>
+                                                    <option value="<%= j %>" selected="true"><%= j %></option>
+                                                <% } else { %>
+                                                    <option value="<%= j %>"><%= j %></option>
+                                               <% } %>
+                                            <% } %>
+                                        </select>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="form-group form-row">
+        
+                                    <div class="col-md-6">
+                                        <label for="native-language">Native language</label>
+        
+                                        <%
+                                            let languages = [
+                                                {
+                                                    name: 'English',
+                                                    acronym: 'en'
+                                                },
+                                                {
+                                                    name: 'Portuguese',
+                                                    acronym: 'pt'
+                                                },
+                                                {
+                                                    name: 'Spanish',
+                                                    acronym: 'es'
+                                                }
+                                            ];
+                                        %>
+                                        
+                                        <select name="native_language" id="native-language" class="custom-select">
+                                            <option value="-1">Select your native language</option>
+                                            <% for (language of languages) { %>
+                                                <option value="<%= language.acronym %>"><%= language.name %></option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+        
+                                </div>
+        
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="agree_to_terms" id="check-agree-to-terms" class="form-check-input" >
+                                        <label for="check-agree-to-terms" class="form-check-label">By signing up, you agree to Uni <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>.</label>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group d-flex justify-content-end">
+                                    <button type="submit" name="signup" class="btn btn-primary btn-sign">Sign Up</button>
+                                </div>
+                            </form>
+                            
+    
+                        </div>
+
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

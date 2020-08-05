@@ -1,0 +1,20 @@
+Um chat para conversas de usuários globais que falem idiomas diferentes.
+
+Um simples chat em que todos falam e entendem uma mesma língua.
+
+A simple online chat where everyone speaks and understands the same language.
+
+Todo usuário precisa de uma conta para interagir nas salas.
+
+Ao se cadastrarem, cada usuário precisa informar nome, sobrenome, data de nascimento, nickname, senha, nacionalidade e o idioma nativo.
+
+Além do idioma nativo, o usuário poderá adicionar mais línguas 
+
+As salas podem ser acessadas através de uma id...
+
+Cada sala deverá suportar no máximo até 50 pessoas interagindo simultaneamente.
+
+O usuário poderá ativar/desativar a tradução automática das mensagens através do painel de configurações.
+
+Também é possível traduzir uma mensagem para um outro idioma desejado.
+

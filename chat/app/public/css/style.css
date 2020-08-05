@@ -1,0 +1,223 @@
+body {
+    font-family: "Source Sans Pro", "sans-serif";
+}
+
+label {
+    font-weight: bold;
+    color: #000;
+}
+
+#auth-content {
+    margin-top: 200px;
+}
+
+#messages {
+    height: 550px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 40px;
+    flex-flow: column;
+    overflow-y: scroll;
+}
+
+#form-message {
+    padding: 20px 0px 20px 0px;
+    background-color: #fff;
+}
+
+#connection-message {
+    text-align: center;
+    color: #999;
+}
+
+#connection-status {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#room-name {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+#user-list {
+    list-style-type: none;
+    display: block;
+    height: 506px;
+    overflow-y: scroll;
+}
+
+.btn-sign {
+    font-weight: bold;
+}
+
+.page-content {
+    min-height: 920px;
+}
+
+.brandname {
+    font-family: "Fredoka One";
+    font-size: 8em;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+}
+
+.slogan {
+    color: #999;
+    text-align: center;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.form-check-label {
+    font-weight: normal;
+}
+
+.content {
+    margin-top: 200px;
+}
+
+.container-chat {
+    border-radius: .25rem;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.message {
+    padding: 10px;
+    display: inline-block;
+    min-width: 250px;
+    border-radius: .25rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .05);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.message-left {
+    align-self: flex-start;
+}
+
+.message-right {
+    align-self: flex-end;
+}
+
+.message-right .message-author {
+    color: #007bff;
+}
+
+.message-author {
+    font-weight: bold;
+}
+
+.message-text {
+    text-align: justify;
+}
+
+.message-status {
+    text-align: end;
+    font-size: .9em;
+    color: #999;
+}
+
+.message-status .fas {
+    margin-left: 10px;
+}
+
+.status {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    border: 2px solid #eee;
+    position: relative;
+}
+
+.status::before {
+    width: 16px;
+    height: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 8px);
+    content: ' ';
+    visibility: hidden;
+}
+
+.status-danger {
+    border-color: #c82333;
+}
+
+.status-danger::before {
+    background-color: #c82333;
+}
+
+.status-warning {
+    border-color: #e0a800;
+}
+
+.status-warning::before {
+    background-color: #e0a800;
+}
+
+.status-success {
+    border-color: #218838;
+}
+
+.status-success::before {
+    background-color: #218838;
+}
+
+.status-active::before {
+    visibility: visible;
+}
+
+.user {
+    padding: 10px;
+    position: relative;
+}
+
+.user-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 10px;
+}
+
+.user-status-on {
+    background-color: #218821;
+    opacity: 0.8;
+}
+
+.user-status-off {
+    background-color: #eee;
+}
+
+
+
+/* .container-auth {
+    margin-top: 200px;
+    width: 400px;
+} */
+
+
+

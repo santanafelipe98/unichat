@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UniChat</title>
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/all.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/socket.io.slim.js"></script>
+        <script src="../js/chat.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="chat-status">
+                        <div id="room-name"><%= room.name  %> (<span id="users-count">2</span> / 20)</div>
+
+                        <ul id="user-list">
+                            
+                        </ul> <!-- User list -->
+
+
+                    </div> <!-- Chat Status  -->
+                </div>
+                <div class="col-md-8">
+                    <div class="container-chat">
+                        <div id="messages">
+                            
+                        </div> <!-- Messages -->
+                        <div id="form-message">
+    
+                            <div class="input-group">
+                                <input type="hidden" name="room_id" id="input-room-id" value="<%= room._id %>">
+                                <input type="hidden" name="author_id" id="input-author-id" value="<%= user._id %>">
+                                <input type="hidden" name="author_nickname" id="input-author-nickname" value="<%= user.nickname %>">
+                                <input type="hidden" name="source_language" id="input-source-language" value="<%= user.native_language %>">
+                                <input type="text" class="form-control" name="message" id="input-message" placeholder="What are you thinking?">
+                                <div class="input-group-append">
+                                    <button type="button" name="btn_send_message" id="btn_send_message" class="btn btn-outline-primary">Send</button>
+                                </div>
+                            </div>
+    
+                        </div>
+                </div> <!-- Chat container -->
+                </div>
+            </div>
+
+            
+        </div>
+    </body>
+</html>
